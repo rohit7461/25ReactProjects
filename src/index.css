@@ -1,0 +1,247 @@
+:root {
+    --white: rgba(255, 255, 255, 1);
+    --light-bg: rgb(244, 244, 244);
+    --transparent-light-bg: rgba(255, 255, 255, 0.3);
+    --black: #111111;
+    --dark-bg: rgb(35, 35, 35);
+    --transparent-dark-bg: rgba(0, 0, 0, 0.1);
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--black);
+    background: var(--light-bg);
+}
+
+body.dark,
+body.dark a {
+    color: var(--white);
+    background: var(--dark-bg);
+}
+
+li {
+    list-style-type: none;
+}
+
+nav {
+    display: block;
+    padding: 16px 48px;
+    box-shadow: 5px 5px 10px var(--transparent-dark-bg);
+}
+
+.logo {
+    font-size: 24px;
+}
+
+section {
+    position: relative;
+    min-height: calc(100vh - 64px);
+    height: 100%;
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+/* Accordian */
+.faq {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    background: coral;
+    border-radius: 10px;
+}
+
+.faquery {
+    padding: 16px 32px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style-type: none;
+    background: rgba(255, 255, 255, 0.418);
+    border-radius: 5px;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Random Color Generator */
+.color-box {
+    display: grid;
+    place-items: center;
+    height: 500px;
+    width: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px white;
+    border-radius: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+/* Star Rating */
+.rating-box {
+    padding: 56px 104px;
+    color: #ffea62;
+    background-color: #7086FB;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+.rating-text {
+    font-size: 24px;
+}
+
+/* Image Slider */
+.slider {
+    position: relative;
+    height: 400px;
+    width: 700px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slider img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    translate: transformY(-50%);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    display: flex;
+    gap: 5px;
+    padding: 5px 8px;
+    background: #292929;
+    transform: translateX(-50%);
+    border-radius: 8px;
+}
+
+.dot {
+    height: 5px;
+    width: 16px;
+    background: #717171;
+    border-radius: 5px;
+}
+
+.dot.active {
+    background: var(--white);
+}
+
+/* Load More Button */
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.product {
+    padding: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    list-style: none;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Tree View Menu */
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 350px;
+    height: 100%;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    background: rgb(0, 191, 255);
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 30px;
+}
+
+.menu-item {
+    display: flex;
+    gap: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* QR code generator */
+input {
+    padding: 4px 8px;
+    font-size: 16px;
+    min-width: 350px;
+}
+
+.qrCode {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 400px;
+}
