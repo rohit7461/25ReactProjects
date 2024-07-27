@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 function ScrollIndicator() {
 
     const [productData, setProductData] = useState([])
-    
+    const [scrollPercent, setScrollPercent] = useState(0)
+    const [loading, setLoading] = useState(true)
 
-    const loadProducts = () => {
+    const loadProducts = async () => {
         try {
-            fetch('https://dummyjson.com/products?limit=10&select=title,id,price,thumbnail')
+            await fetch('https://dummyjson.com/products?limit=10&select=title,id,price,thumbnail')
                 .then(res => res.json())
                 .then(data => {
                     setProductData(data.products);
+                    setLoading(false)
                 });
         }
         catch (err) {
@@ -19,9 +21,9 @@ function ScrollIndicator() {
 
     }
 
-    const handleLoadMore = () => {
+    const handleLoadMore = async () => {
         try {
-            fetch(`https://dummyjson.com/products?limit=10&skip=${productData.length}&select=title,id,price,thumbnail`)
+            await fetch(`https://dummyjson.com/products?limit=10&skip=${productData.length}&select=title,id,price,thumbnail`)
                 .then(res => res.json())
                 .then(data => {
                     setProductData([...productData, ...data.products]);
@@ -36,11 +38,30 @@ function ScrollIndicator() {
         loadProducts();
     }, [])
 
-    if (productData.length === 0) return <section>Loading...</section>
+    const handleScrollPercent = () => {
+
+        const scrolledFromTop = document.documentElement.scrollTop;
+        const heightToScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+        setScrollPercent((scrolledFromTop / heightToScroll) * 100);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScrollPercent);
+
+        return () => {
+            window.removeEventListener('scroll', handleScrollPercent);
+        }
+    }, [])
+
+    if (loading)
+        return (<section>Loading...</section>)
 
     return (
         <section>
-            <div className="scroll-bar"></div>
+            <div className="scroll-bar"
+                style={{ width: `${scrollPercent}%` }}>
+            </div>
             <ul className="products">
                 {
                     productData.map((product, i) => {
@@ -56,10 +77,15 @@ function ScrollIndicator() {
                     })
                 }
                 {
-                    productData.length === 100 ? <p>You have reached 100 results!</p> : ""
+                    productData.length === 100
+                        ? <p>You have reached 100 results!</p>
+                        : ""
                 }
             </ul>
-            <button onClick={handleLoadMore} disabled={productData.length === 100}>Load More</button>
+            <button onClick={handleLoadMore}
+                disabled={productData.length === 100}>
+                Load More
+            </button>
         </section>
     )
 }
