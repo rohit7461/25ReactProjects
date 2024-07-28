@@ -14,6 +14,7 @@ function Homepage() {
                 <li><Link className="link" to="/qrCodeGenerator">QR Code Generator</Link></li>
                 <li><Link className="link" to="/lightDarkMode">Light Dark Mode</Link></li>
                 <li><Link className="link" to="/scrollIndicator">Scroll Indicator</Link></li>
+                <li><Link className="link" to="/customTabs">Custom Tabs</Link></li>
             </ul>
         </section>
     )

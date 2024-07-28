@@ -247,10 +247,36 @@ input {
 }
 
 /* Scroll Indicator */
-.scroll-bar{
+.scroll-bar {
     position: fixed;
     top: 0;
     left: 0;
     height: 10px;
     background: #7086FB;
 }
+
+/* Custom Tabs */
+.tab-container {
+    height: 500px;
+    width: 600px;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+}
+
+.tab {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 3px solid #7086FB;
+    border-radius: 5px;
+    color: #7086FB;
+    font-weight: bold;
+}
+
+.tab.active {
+    color: var(--white);
+    background: #7086FB;
+}
+
