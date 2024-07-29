@@ -280,3 +280,57 @@ input {
     background: #7086FB;
 }
 
+/* Custom Modal */
+.modal-box {
+    position: fixed;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--dark-bg);
+    color: var(--white);
+    height: 400px;
+    width: 600px;
+    animation: modal-animate 0.3s ease-in;
+}
+
+.modal-box button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+hr {
+    width: 100%;
+}
+
+.modal-header {
+    flex-grow: 1;
+}
+
+.modal-body {
+    flex-grow: 7;
+    flex-basis: 200px;
+    display: grid;
+    place-items: center;
+}
+
+.modal-footer {
+    flex-grow: 1
+}
+
+@keyframes modal-animate{
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    80%{
+        opacity: 1;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

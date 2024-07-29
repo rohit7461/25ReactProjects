@@ -11,6 +11,7 @@ import QrCodeGenerator from "./assets/components/QrCodeGenerator"
 import LightDarkMode from "./assets/components/LightDarkMode"
 import ScrollIndicator from "./assets/components/ScrollIndicator"
 import Tabs from "./assets/components/Tabs"
+import Modal from "./assets/components/Modal"
 import menuData from "./menuData"
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/lightDarkMode" element={<LightDarkMode />} />
           <Route path="/scrollIndicator" element={<ScrollIndicator />} />
           <Route path="/customTabs" element={<Tabs />} />
+          <Route path="/customModal" element={<Modal />} />
         </Routes>
       </Router>
     </div>
