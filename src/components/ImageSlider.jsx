@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
-import image1 from "../images/jack-bulmer-4_axlytIqFs-unsplash.jpg"
-import image2 from "../images/mathew-schwartz-IQY8hsnPpnA-unsplash.jpg"
-import image3 from "../images/robert-linder-P3giKAFGoyU-unsplash.jpg"
-import image4 from "../images/sammy-wong-96qgwuZuPJs-unsplash.jpg"
+import image1 from "../assets/images/jack-bulmer-4_axlytIqFs-unsplash.jpg"
+import image2 from "../assets/images/mathew-schwartz-IQY8hsnPpnA-unsplash.jpg"
+import image3 from "../assets/images/robert-linder-P3giKAFGoyU-unsplash.jpg"
+import image4 from "../assets/images/sammy-wong-96qgwuZuPJs-unsplash.jpg"
 
 function ImageSlider() {
 

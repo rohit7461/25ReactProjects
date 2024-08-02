@@ -231,7 +231,7 @@ button {
 }
 
 /* QR code generator */
-input {
+input[type="text"] {
     padding: 4px 8px;
     font-size: 16px;
     min-width: 350px;
